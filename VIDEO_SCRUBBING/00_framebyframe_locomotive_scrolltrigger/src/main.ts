@@ -53,7 +53,6 @@ video.onloadedmetadata = () => {
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 video.load();
 video.currentTime += 0.01;
