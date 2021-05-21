@@ -1,4 +1,4 @@
-import "../styles/style.css";
+import "../styles/style.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";

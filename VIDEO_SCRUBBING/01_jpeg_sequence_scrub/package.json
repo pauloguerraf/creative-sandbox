@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "gsap": "./gsap-bonus.tgz",
+    "parcel": "^1.12.4"
+  },
+  "devDependencies": {
+  }
+}

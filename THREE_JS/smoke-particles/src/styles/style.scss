@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+  overflow: hidden;
+}
+.loco-scroll {
+  overflow-y: hidden !important;
+}
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  border: aqua solid 1px;
+}
+#section1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: lightsalmon;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 10vmin;
+}
+#section2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: lightskyblue;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: hotpink solid 1px;
+}
