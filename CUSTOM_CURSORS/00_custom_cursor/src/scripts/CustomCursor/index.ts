@@ -76,7 +76,7 @@ export default class CustomCursor {
   handleTick(t: number) {
     this.updateRotation();
     this.updatePositions(t);
-    this.updateTranslation();
+    this.updateTranslationAndBlur();
   }
 
   handleMouseMove(e: MouseEvent) {
@@ -124,7 +124,7 @@ export default class CustomCursor {
     this.mouseAngle = this.d(this.mouseAngle, i, s);
   }
 
-  updateTranslation() {
+  updateTranslationAndBlur() {
     const t = this.innerPos;
     const e = this.outerPos;
     this.innerWrapper.style.transform = `translate3d(${t.x}px, ${t.y}px, 0)`;
@@ -137,7 +137,8 @@ export default class CustomCursor {
       1
     );
     this.outerCircle.style.transform = `rotate(${this.mouseAngle}rad)`;
-    this.outerCircleInner.style.transform = `scaleX(${1 + i})`;
+    this.outerCircleInner.style.transform = `scaleX(${1 + i * 2.5})`;
+    this.outerCircleInner.style.filter = `blur(${i * 2.2}px)`;
   }
 
   onDestroy() {
