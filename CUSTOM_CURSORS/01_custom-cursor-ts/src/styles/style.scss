@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+  overflow: hidden;
+  cursor: none !important;
+}
+.loco-scroll {
+  overflow-y: hidden !important;
+}
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  border: aqua solid 1px;
+}
+#section1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 10vmin;
+}
+.cursor {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  margin-top: -35px;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.8s;
+}
+.cursor .cursor-content {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor .outer-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor .outer-circle {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor .outer-circle-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor .outer-circle-inner-1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2px solid #db3b3b;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.4s;
+}
+
+.cursor .inner-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -9%;
+  margin-top: -9%;
+  width: 18%;
+  height: 18%;
+}
+
+.cursor .inner-circle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #db3b3b;
+  transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0.1s;
+}
+
+.cursor .inner-circle .arrow {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.4s;
+  transform: translate(-50%, -50%) rotate(-40deg);
+}
+
+.cursor .inner-circle .arrow path {
+  fill: #db3b3b;
+}
+
+.cursor .inner-indicator {
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #db3b3b;
+  transform: scale(0.8);
+  opacity: 0;
+  transform-origin: 50%;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.5s;
+  backface-visibility: hidden;
+}
