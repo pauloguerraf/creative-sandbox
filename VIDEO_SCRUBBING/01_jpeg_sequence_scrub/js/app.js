@@ -10,14 +10,14 @@ export default class JPEGScrubber {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const frameCount = 204;
+    const frameCount = 309;
     const currentFrame = index => (
       // `http://fernandazanchetta.com/wind/wind_${(index + 1).toString().padStart(5, '0')}.jpg`
-      `img/wind/wind_${(index + 1).toString().padStart(5, '0')}.jpg`
+      `/img/wind/wind_${(index + 101).toString().padStart(5, '0')}.jpg`
     );
 
     const images = []
-    const airpods = {
+    const frames = {
       frame: 0
     };
 
@@ -27,11 +27,12 @@ export default class JPEGScrubber {
       images.push(img);
     }
 
-    gsap.to(airpods, {
+    gsap.to(frames, {
       frame: frameCount - 1,
-      snap: "frame",
+      snap: 'frame',
+      ease: 'power4.out',
       scrollTrigger: {
-        scrub: 0.5
+        scrub: 2
       },
       onUpdate:()=>{ render() } // use animation onUpdate instead of scrollTrigger's onUpdate
     });
@@ -44,7 +45,7 @@ export default class JPEGScrubber {
 
     function render() {
       context.clearRect(0, 0, canvas.width, canvas.height);
-      context.drawImage(images[airpods.frame], 0, 0, canvas.width, canvas.height); 
+      context.drawImage(images[frames.frame], 0, 0, canvas.width, canvas.height); 
     }
 
     function resize() {
